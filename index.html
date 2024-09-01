@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="style.css" type="text/css" rel="stylesheet">
+    <title>Tannistha Neogy</title>
+</head>
+<body>
+    <div class="navbar">
+        <p class="logo">TN.</p>
+        <div class="menu-icon" id="menuIcon">&#9776;</div>
+        <ul id="navLinks">
+            <li><a href="#">Home</a></li>
+            <li><a href="#project">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <button id="hire">Hire Me</button>
+    </div>
+    <div class="container">
+        <div class="home">
+            <div class="left">
+                <div class="home-header">
+                    <div class="occupation">
+                        <p>> Web Dev & UI/UX Designer</p>
+                    </div>
+                    <div class="available-for-work">
+                        <div class="green-bullet"></div>
+                        <p>AVAILABLE FOR WORK</p>
+                    </div>
+                </div>
+                <div class="info">
+                    <h1 class="name">I'm Tannistha Neogy</h1>
+                    <p class="one-liner">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fuga similique, eveniet nam asperiores repudiandae. adipisicing elit. Fuga similique, eveniet</p>
+                    <div class="btn-group">
+                        <button class="download" id="downloadResumeBtn"><i class="fa-solid fa-download"></i><p>Resume</p></button>
+                        <button class="copy" id="copyEmailBtn"><i class="fa-solid fa-copy"></i><p>Copy Email</p></button>
+                    </div>
+                </div>
+            </div>
+            <div class="right">
+                <img src="hero.png" alt="hero">
+            </div>            
+        </div>
+        <div class="projects" id="project">
+            <h2 class="project-header">Projects</h2>
+            <div class="projects-container">
+                <div class="card">
+                    <img src="diversion.png" alt="Image Description">
+                    <div class="card-content">
+                        <h2>Diversion 2k24 Website</h2>
+                        <p>The UI for the Diversion 2k24 website, which was AI themed and AI integrated. The memo was to give the users seamless and futuristic vibes with the UI.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="socialmedia.png" alt="Image Description">
+                    <div class="card-content">
+                        <h2>Social Media Website</h2>
+                        <p>The UI was design keeping in mind a clean and minimalistic theme. Multiple pages with chat functionality.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="nftgame.png" alt="Image Description">
+                    <div class="card-content">
+                        <h2>NFT Game</h2>
+                        <p>Cyberpunk futuristic themed nft game with custom design elements.</p>
+                    </div>
+                </div>
+            </div>
+        <div class="contact" id="contact">
+            <h2 class="contact-header">Conatct Me</h2>
+            <form action="#" method="post" class="group">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" rows="4" required></textarea>
+                </div>
+                <button type="submit" class="send-message">Send Message</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        const menuIcon = document.getElementById('menuIcon');
+        const navLinks = document.getElementById('navLinks');
+
+        menuIcon.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        document.getElementById('copyEmailBtn').addEventListener('click', function() {
+        const email = 'tannisthaneogy1@gmail.com'; // Your constant email ID
+        
+        navigator.clipboard.writeText(email).then(function() {
+            // Success: Show feedback to the user
+            const copyBtn = document.getElementById('copyEmailBtn');
+            copyBtn.querySelector('p').innerText = 'Copied!';
+            
+            setTimeout(() => {
+                copyBtn.querySelector('p').innerText = 'Copy Email';
+            }, 2000); // Change back after 2 seconds
+        }, function(err) {
+            // Error: Alert or log the error
+            alert('Failed to copy email: ', err);
+        });
+        });
+
+        document.getElementById('downloadResumeBtn').addEventListener('click', function() {
+        const resumeUrl = 'TannisthaNeogy_Resume_August24.pdf'; // Replace with the actual path to your resume
+        
+        // Create an invisible download link
+        const downloadLink = document.createElement('a');
+        downloadLink.href = resumeUrl;
+        downloadLink.download = 'Tannistha_Neogy_Resume.pdf'; // Replace with your desired file name
+        
+        // Programmatically click the link to trigger the download
+        downloadLink.click();
+        });
+
+
+
+    </script>
+</body>
+</html>
